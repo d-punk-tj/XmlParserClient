@@ -8,7 +8,7 @@ import { xmlItem } from 'src/app/models/xmlItem'
 })
 export class XmlService {
 
-  base_url = 'http://localhost:4200/xml/xml-parser/?url=' 
+  base_url = 'http://localhost:8080/xml/xml-parser/?url=' 
 
   constructor(private http:HttpClient) { }
 

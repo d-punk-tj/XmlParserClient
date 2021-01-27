@@ -11,7 +11,7 @@ import { Post } from 'src/app/models/post';
 })
 export class PostService {
 
-  private apiURL = "http://localhost:4200/post/";
+  private apiURL = "http://localhost:8080/post/";
 
   constructor(private httpClient: HttpClient) { }
 
