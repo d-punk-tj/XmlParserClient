@@ -23,7 +23,7 @@ export class IndexComponent implements OnInit {
   deletePost(id: string){
     this.postService.delete(id).subscribe(res => {
          this.posts = this.posts.filter(item => item._id !== id);
-         this._snackBar.open("Post was Deketed", "done", {
+         this._snackBar.open("Post was Deleted", "done", {
           duration: 4000,
         });
     })
