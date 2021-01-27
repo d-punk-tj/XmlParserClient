@@ -13,6 +13,8 @@ import { MatInputModule} from '@angular/material/input';
 import { MatTableModule} from '@angular/material/table'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,7 +56,8 @@ import { EditComponent } from './components/post/edit/edit.component';
     MatTableModule,
     MatSnackBarModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

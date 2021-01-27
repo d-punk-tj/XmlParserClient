@@ -1,27 +1,23 @@
 <div class="container">
-    <h1>View Post</h1>
-  
-    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
-   
-   
-    <div>
-        <strong>Title:</strong>
-        <p>{{ post.title }}</p>
-    </div>
-   
-    <div>
-        <strong>Description:</strong>
-        <p>{{ post.description }}</p>
-    </div>
 
-    <div>
-        <strong>photo:</strong>
-        <p>{{ post.image }}</p>
-    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+         
+        </mat-card-header>
+        <img mat-card-image src="{{ post.image }}" alt="Photo of a Shiba Inu" width="20">
+        <mat-card-content>
+          <p>
+            {{ post.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/post/index">Back</button>
+        </mat-card-actions>
+      </mat-card>
 
-    <div>
-        <strong>link:</strong>
-        <p>{{ post.link }}</p>
-    </div>
+
+    
    
 </div>

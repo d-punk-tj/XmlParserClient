@@ -14,6 +14,7 @@ export class XmlParserComponent implements OnInit {
   public displayedColumns = ['Image', 'Title', 'Description', 'Link'];
   public dataSource = new MatTableDataSource<xmlItem>();
   searchText = '';
+  showSpinner : boolean = false;
 
   constructor(private xmlservice : XmlService) { }
 
@@ -21,7 +22,9 @@ export class XmlParserComponent implements OnInit {
   }
 
   onSearch(){
+    this.showSpinner = true;
     this.xmlservice.parseXml(this.searchText).subscribe(itemList => {
+      this.showSpinner = false;
       console.log(itemList);
       this.dataSource.data = itemList as xmlItem[];
     })

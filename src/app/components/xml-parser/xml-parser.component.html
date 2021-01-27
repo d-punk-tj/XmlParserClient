@@ -7,11 +7,17 @@
           <mat-label>XML URL</mat-label>
           <input matInput placeholder="Enter Url Here" value="" [(ngModel)]="searchText" name="search">
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+        <p>Example URL : https://www.dailymail.co.uk/health/index.rss</p>
+        <button mat-raised-button color="primary" (click)="onSearch()">
+            <mat-icon inline=true>search</mat-icon>
+            Search
+        </button>
         </form>
        
     </mat-card>
 
+    <mat-spinner [diameter]="50" *ngIf="showSpinner"></mat-spinner>
+    
 <div class="container" *ngIf="dataSource.data.length">
     <table mat-table [dataSource]="dataSource">
 

@@ -1,7 +1,9 @@
 <div class="container">
-    <h1>Update Post</h1>
+    
+    <mat-card>
+        <h1>Update Post</h1>
   
-    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+    
         
     <form [formGroup]="form" (ngSubmit)="submit()">
          
@@ -60,6 +62,11 @@
             </div>
         </div>
         
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+        <button class="btn btn-success" type="submit" [disabled]="!form.valid">Update</button>
+        <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
     </form>
+
+    </mat-card>
+
+    
 </div>

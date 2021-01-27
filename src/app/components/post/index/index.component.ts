@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post/post.service';
 @Component({
@@ -10,7 +11,7 @@ export class IndexComponent implements OnInit {
 
   posts: Post[] = [];
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.postService.getAll().subscribe((data: Post[])=>{
@@ -22,7 +23,9 @@ export class IndexComponent implements OnInit {
   deletePost(id: string){
     this.postService.delete(id).subscribe(res => {
          this.posts = this.posts.filter(item => item._id !== id);
-         console.log('Post deleted successfully!');
+         this._snackBar.open("Post was Deketed", "done", {
+          duration: 4000,
+        });
     })
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post/post.service';
 
@@ -16,7 +17,8 @@ export class CreateComponent implements OnInit {
 
   constructor(
     public postService: PostService,
-    private router: Router
+    private router: Router,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,9 @@ export class CreateComponent implements OnInit {
     this.postService.create(this.form.value).subscribe(res => {
          console.log('Post created successfully!');
          this.router.navigateByUrl('post/index');
+         this._snackBar.open("Post was created", "done", {
+          duration: 4000,
+        });
     })
   }
 
