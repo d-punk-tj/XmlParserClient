@@ -1,1 +1,27 @@
-<p>view works!</p>
+<div class="container">
+    <h1>View Post</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+   
+   
+    <div>
+        <strong>Title:</strong>
+        <p>{{ post.title }}</p>
+    </div>
+   
+    <div>
+        <strong>Description:</strong>
+        <p>{{ post.description }}</p>
+    </div>
+
+    <div>
+        <strong>photo:</strong>
+        <p>{{ post.image }}</p>
+    </div>
+
+    <div>
+        <strong>link:</strong>
+        <p>{{ post.link }}</p>
+    </div>
+   
+</div>
